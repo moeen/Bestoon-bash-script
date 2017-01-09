@@ -36,7 +36,7 @@ while getopts "iehga:t:" options
         curl --data "token=$TOKEN" http://bestoon.ir/q/generalstat/
         exit 0 ;;
       h)
-        echo -e "Bestoon script help\nBestoon website : http://www.bestoon.ir\nBestoon source page : https://github.com/jadijadi/bestoon\nBestoon script source page : https://github.com/jadijadi/bestoon\nUse -i for your income\nUse -e for your expenses\n(NOTE : DONT USE -i AND -e TOGETHER!)\nUse -a for your amount\nUse -t for your income/expense text\nUse -g to show your generalstat\nAnd Use -h for help\nThanks for using BESTOON ;)"
+        echo -e "Bestoon script help\nBestoon website : http://www.bestoon.ir\nBestoon source page : https://github.com/jadijadi/bestoon\nBestoon script source page : https://github.com/moeinroid/Bestoon-bash-script\nUse -i for your income\nUse -e for your expenses\n(NOTE : DONT USE -i AND -e TOGETHER!)\nUse -a for your amount\nUse -t for your income/expense text\nUse -g to show your generalstat\nAnd Use -h for help\nThanks for using BESTOON ;)"
         exit 0 ;;
     esac
 done
