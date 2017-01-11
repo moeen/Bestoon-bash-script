@@ -16,18 +16,17 @@ TOKEN_REQ(){
     TOKEN=`cat $HOME/.bestoon_config.txt`
 fi }
 
-while getopts "iehga:t:" options
+while getopts "i:e:hgt:" options
   do
     case "$options" in
       i)
         TOKEN_REQ
-        TYPE="income" ;;
+        TYPE="income"
+       	AMOUNT="$OPTARG" ;;
       e)
         TOKEN_REQ
-        TYPE="expense" ;;
-      a)
-        TOKEN_REQ
-        AMOUNT="$OPTARG" ;;
+        TYPE="expense"
+	AMOUNT="$OPTARG" ;;
       t)
         TOKEN_REQ
         TEXT="$OPTARG" ;;
@@ -36,24 +35,19 @@ while getopts "iehga:t:" options
         curl --data "token=$TOKEN" http://bestoon.ir/q/generalstat/
         exit 0 ;;
       h)
-        echo -e "Bestoon script help\nBestoon website : http://www.bestoon.ir\nBestoon source page : https://github.com/jadijadi/bestoon\nBestoon script source page : https://github.com/moeinroid/Bestoon-bash-script\nUse -i for your income\nUse -e for your expenses\n(NOTE : DONT USE -i AND -e TOGETHER!)\nUse -a for your amount\nUse -t for your income/expense text\nUse -g to show your generalstat\nAnd Use -h for help\nThanks for using BESTOON ;)"
+	      echo -e "Bestoon script help\nBestoon website : http://www.bestoon.ir\nBestoon source page : https://github.com/jadijadi/bestoon\nBestoon script source page : https://github.com/jadijadi/bestoon\nUse -i for your income and set the income amount\nUse -e for your expenses and set the expense amount\n(NOTE : DONT USE -i AND -e TOGETHER!)\nUse -t for your income/expense text\nUse -g to show your generalstat\nAnd Use -h for help\nThanks for using BESTOON ;)"
         exit 0 ;;
     esac
 done
 
-if [ ! -z $TYPE ]
+if [ ! -z $AMOUNT ]
   then
-    if [ ! -z $AMOUNT ]
-      then
           if [ ! -z $TEXT ]
             then
               curl --data "token=$TOKEN&amount=$AMOUNT&text=$TEXT" http://bestoon.ir/submit/$TYPE/
             else
               echo "Please enter your income/expense text with -t"
           fi
-      else
-        echo "Please enter your amount with -a"
-    fi
-  else
-    echo "Please choose income or expense with -i or -e"
+  else	  
+	  echo "Please set your income or expense amount with -i or -e"
 fi
