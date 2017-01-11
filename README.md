@@ -10,10 +10,9 @@ And make it executable : <br>
 Run this script :<br>
 <code>$ ./bestoon-script.sh</code>
 ## Help
-Use -i for your income<br>
-Use -e for your expenses<br>
+Use -i for your income and set the income amount<br>
+Use -e for your expenses and set the expense amount<br>
 (NOTE : DONT USE -i AND -e TOGETHER!)<br>
-Use -a for your amount<br>
 Use -t for your income/expense text<br>
 Use -g to show your generalstat<br>
 And Use -h for help
