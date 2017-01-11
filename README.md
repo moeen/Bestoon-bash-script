@@ -1,6 +1,6 @@
-# Bestoon-bash-script
+# Bestoon bash script
 A simple bash script for bestoon.ir dependent on https://github.com/jadijadi/bestoon/
-## Install
+## Run
 First you have to clone this project :<br>
 <code>$ git clone https://github.com/moeinroid/Bestoon-bash-script</code><br>
 After that You have to go to Bestoon script directory : <br>
